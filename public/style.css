@@ -1,0 +1,49 @@
+div.horizontal-center {
+	margin:0 auto;
+	width:300px;
+}
+
+div#content { 
+   	width:300px;
+   	height:200px;
+   	position:absolute;
+   	left:50%;
+   	top:30%;
+   	margin:-100px 0 0 -150px;
+   	text-align:center;
+}
+
+header { 
+	margin-bottom:30px;
+	font-size:72px;
+	color:#ffad40;
+}
+
+span.location { 
+	font-size:48px;
+	color:#235d79;
+}
+
+span.temperature { 
+	font-size:60px;
+	color:#ffad40;
+}
+
+input[type="text"] {
+	box-shadow:3px 3px 5px #888888;
+	font-size: 36px; 
+	width: 6em;
+	text-align:center;
+}
+
+input[type="submit"] { 
+	height:6em;
+	width: 6em;
+	visibility:hidden;
+}
+
+body {
+	background-color:#3ca0d0;
+	font-size:2em;
+	color:#f9f9f9;
+}

@@ -1,0 +1,28 @@
+<form action="/" method="post">
+	<input type="text" name="location" id="location" placeholder="Zip" autofocus>
+	<br>
+	<input type="submit" value="Go">
+</form>
+
+<%
+location = params[:location]
+
+if location
+		if location =~ /^\d{5}$/
+			url = "http://api.wunderground.com/api/d56639527f3799af/conditions/q/#{location}.json" 
+
+			data = open(url).read
+		
+			json = JSON.parse(data)
+		
+			if json["response"]["error"].nil? %>
+				<span class="location"><%= json["current_observation"]["display_location"]["full"] %>
+				<br><br>
+				<span class="temperature"><%= "#{json["current_observation"]["temp_f"].round}&deg;" %>
+			<% else %>
+			Uh oh! That's not a real location!
+			<% end %>
+		<% else %>
+		That made no sense!
+		<% end %>
+<% end %>
